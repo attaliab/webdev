@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap');
 
 .result-box {
-    height: 350px;
+    height: 400px;
     width: 275px;
     background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     border-radius: 30px;
     flex-direction: column;
 }
 
-#summary-box {
+#whole {
     background-color: white;
     border-radius: 30px;
     width: 550px;
-    height: 350px;
+    height: 400px;
     box-shadow: 10px 10px 20px rgb(226, 226, 252);
     margin: 0 auto;
+}
+
+#summary {
+    position: relative;
+    left: 70px;
+    color: rgb(33, 33, 74);
 }
 
 h1 {
@@ -33,6 +39,8 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    bottom: 30px;
 }
 
 p {
@@ -45,7 +53,7 @@ p {
     color: white;
     justify-content: center;
     position: relative;
-    top: 40px;
+    top: 30px;
     left: 40px;
 }
 
@@ -54,4 +62,15 @@ p {
     position: relative;
     bottom: 30px;
     left: 50px;
+}
+
+#great {
+    color: white;
+    font-size: 28px;
+}
+
+#score {
+    color: rgb(180, 180, 180);
+    font-size: 12px;
+    text-align: center;
 }

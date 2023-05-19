@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+body{
+   background-image: url('https://www.nbc.com/sites/nbcblog/files/styles/amp_featured_image/public/2023/03/super-mario-bros-movie-poster.jpg?h=d2f4c1d6');
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#box {
+   background-color: rgb(255, 146, 208);
+   width: 1000px;
+   height: 700px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
+
+div.content, h1, #msg {
+   display: flex;
+   margin-top: 0px;
+   justify-content: center;
+}
+
+
+
+label{
+   font-size: 20px;
+   color: white;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+}
+
+input {
+   width:300px;
+   background-color: rgb(255, 205, 247);
+   color: rgb(65, 152, 173);
+}
+
+   
+#submitBtn {
+   background-color: rgb(69, 177, 191);
+   width: 200px;
+   height: 40px;
+   border-radius: 10px;
+   border: none;
+   color: white;
+}
+
+h1{
+   padding-top: 60px;
+}
+
+h1, h2{ 
+   color: rgb(255, 255, 255);
+   font-family: 'Delicious Handrawn', cursive;
+   font-size: 50px;
+}

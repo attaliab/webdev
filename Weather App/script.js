@@ -29,24 +29,22 @@ const displayData = async function(city){
         const minTempForecast = weatherData.forecast.forecastday[i].day.mintemp_f
         const conditionForecast = weatherData.forecast.forecastday[i].day.condition.text
         const weatherIcon = weatherData.forecast.forecastday[i].day.condition.icon
-
-
-        //*********CURRENTLY THE CORRECT INFO IS BEING LOGGED IN THE CONSOLE. NOW THE ISSUE IS THAT THE CARDS ARE NOT POPULATING.**************
-        console.log(maxTempForecast, minTempForecast, conditionForecast)
-
-
-    //     const forecastDiv = document.getElementById('forecast')
-    //     forecastDiv.innerHTML += `<div class="card" style="width: 18rem;">
-    //     <img class="card-img-top" src=${weatherIcon} alt="Card image cap">
-    //     <div class="card-body">
-    //       <h5 class="card-title">${maxTempForecast}</h5>
-    //       <p class="card-text">${minTempForecast}</p>
-    //       <p class="card-text">${conditionForecast}</p>
-    //     </div>
-    //   </div>`
+       
+        const forecastDiv = document.getElementById('forecast')
+        forecastDiv.innerHTML += `<div class="row">
+        <div class="col-sm-6">
+          <div class="card" id='dayCard'>
+          <img src="${weatherIcon}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id='max'>${maxTempForecast}</h5>
+              <h5 class="card-title" id='min'>${minTempForecast}</h5>
+              <p class="card-text" id='condition'>${conditionForecast}</p>
+              
+            </div>
+          </div>
+        </div>
+        `
     }
-    
- 
 }
 
 

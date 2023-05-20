@@ -5,18 +5,48 @@ const weatherDiv = document.getElementById('weather')
 const apiKey = '264123c8e12246e58ad144116231805'
 
 const getData = async function(city){
-    let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=264123c8e12246e58ad144116231805&q=${city}&aqi=no`)
+    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=264123c8e12246e58ad144116231805&q=${city}&days=5&aqi=no&alerts=no`)
     let data = response.json()
     return data
 }
 
 const displayData = async function(city){
     let weatherData = await getData(city)
+    const temperature = document.getElementById('temp')
+    const location = document.getElementById('location')
+    const condition = document.getElementById('condition')
+    const forecast = document.getElementById('forecast')
     console.log(weatherData)
-    weatherDiv.innerHTML += `<h1>${weatherData.location.name}, ${weatherData.location.region}</h1>`
-    weatherDiv.innerHTML += `<p>${weatherData.current.condition.text}</p>`
-    weatherDiv.innerHTML += `<p>${weatherData.current.temp_f}°</p>`
+    // current weather data
+    let roundedTemp = Math.round(weatherData.current.temp_f)
+    temperature.innerText += `${roundedTemp}°`
+    location.innerText += `${weatherData.location.name}, ${weatherData.location.region}`
+    condition.innerText += `${weatherData.current.condition.text}`
+    // forecast HTML loop
+    // const 5dayArr = weatherData.forecast.forecastday
+    for (let i = 0; i < 5; i++){
+        const maxTempForecast = weatherData.forecast.forecastday[i].day.maxtemp_f
+        const minTempForecast = weatherData.forecast.forecastday[i].day.mintemp_f
+        const conditionForecast = weatherData.forecast.forecastday[i].day.condition.text
+        const weatherIcon = weatherData.forecast.forecastday[i].day.condition.icon
 
+
+        //*********CURRENTLY THE CORRECT INFO IS BEING LOGGED IN THE CONSOLE. NOW THE ISSUE IS THAT THE CARDS ARE NOT POPULATING.**************
+        console.log(maxTempForecast, minTempForecast, conditionForecast)
+
+
+    //     const forecastDiv = document.getElementById('forecast')
+    //     forecastDiv.innerHTML += `<div class="card" style="width: 18rem;">
+    //     <img class="card-img-top" src=${weatherIcon} alt="Card image cap">
+    //     <div class="card-body">
+    //       <h5 class="card-title">${maxTempForecast}</h5>
+    //       <p class="card-text">${minTempForecast}</p>
+    //       <p class="card-text">${conditionForecast}</p>
+    //     </div>
+    //   </div>`
+    }
+    
+ 
 }
 
 

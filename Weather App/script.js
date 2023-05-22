@@ -31,8 +31,19 @@ const displayData = async function(city){
         const maxTempForecast = Math.round(weatherData.forecast.forecastday[i].day.maxtemp_f)
         const minTempForecast = Math.round(weatherData.forecast.forecastday[i].day.mintemp_f)
         const conditionForecast = weatherData.forecast.forecastday[i].day.condition.text
-        const weatherIcon = weatherData.forecast.forecastday[i].day.condition.icon
-       
+        const weatherIcon = icon(iconCondition)
+        // weatherData.forecast.forecastday[i].day.condition.icon
+
+        const icon = iconCondition => (
+          if (iconCondition === 'sunny'){
+
+          } else if (iconCondition.includes('rain') == true) {
+
+          } else if (iconCondition.includes('snow') == true) {
+            
+          }
+        )
+
         const forecastDiv = document.getElementById('forecast')
         forecastDiv.innerHTML += `<div class="row">
         <div class="col-sm-6">

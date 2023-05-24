@@ -66,11 +66,9 @@ const displayData = async function(city){
                 <h5 class="card-title text-center" id='min' >${minTempForecast}</h5>
               </div>
               <p class="card-text d-flex justify-content-center text-center" id='condition'>${conditionForecast}</p>
-              
             </div>
           </div>
-        </div>
-        `
+        </div>`
     }
 }
 

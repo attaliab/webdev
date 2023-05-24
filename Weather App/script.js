@@ -2,8 +2,6 @@ const cityInput = document.getElementById('city')
 const form = document.getElementById('cityForm')
 const weatherDiv = document.getElementById('weather')
 
-const apiKey = '264123c8e12246e58ad144116231805'
-
 // Data
 const getData = async function(city){
     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=264123c8e12246e58ad144116231805&q=${city}&days=5&aqi=no&alerts=no`)
@@ -39,14 +37,18 @@ const displayData = async function(city){
           let img = document.createElement("img"); 
           if (weatherCondition === 'Sunny'){
             img = './images/sunny.png'
-          } else if (weatherCondition.includes('rain') == true) {
+          } else if (weatherCondition.includes('rain')) {
             img = './images/rainy.png'
-          } else if (weatherCondition.includes('cloudy') == true) {
+          } else if (weatherCondition.includes('cloudy')) {
             img = './images/partly-cloudy.png'
-          } else if (weatherCondition.includes('snow') == true) {
+          } else if (weatherCondition.includes('snow') || weatherCondition.includes('Blizzard')) {
             img = './images/snow.png'
-          } else if (weatherCondition.includes('overcast') == true) {
+          } else if (weatherCondition.includes('Overcast')) {
             img = './images/overcast.png'
+          } else if (weatherCondition.includes('Mist')) {
+            img = './images/mist.png'
+          } else if (weatherCondition.includes('Fog')) {
+            img = './images/fog.png'
           }
           return img;
         }
@@ -79,44 +81,3 @@ form.addEventListener('submit', function(event){
     let city = cityInput.value
     displayData(city)
 })
-
-
-
-
-
-// current: 
-    // cloud: 25
-    // condition: {text: 'Partly cloudy', icon: '//cdn.weatherapi.com/weather/64x64/day/116.png', code: 1003}
-    // feelslike_c: 11
-    // feelslike_f: 51.7
-    // gust_kph: 14
-    // gust_mph: 8.7
-    // humidity: 49
-    // is_day: 1
-    // last_updated: "2023-05-18 11:45"
-    // last_updated_epoch: 1684424700
-    // precip_in: 0
-    // precip_mm: 0
-    // pressure_in: 30.26
-    // pressure_mb: 1025
-    // temp_c: 12.2
-    // temp_f: 54
-    // uv: 4
-    // vis_km: 16
-    // vis_miles: 9
-    // wind_degree: 180
-    // wind_dir: "S"
-    // wind_kph: 11.2
-    // wind_mph: 6.9
-    // [[Prototype]]: 
-    // Object
-
-// location: 
-    // country: "United States of America"
-    // lat: 39.46
-    // localtime: "2023-05-18 11:55"
-    // localtime_epoch: 1684425349
-    // lon: -77.96
-    // name: "Martinsburg"
-    // region: "West Virginia"
-    // tz_id: "America/New_York"

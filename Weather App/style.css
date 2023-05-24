@@ -1,102 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 #bg-image {
-    background-image: url('https://raw.githubusercontent.com/qknow/images/gh-pages/primary/primary%201/SCIENCE/SUN%20AND%20EARTH/day%20time.jpg');
+    background-image: url('https://cdn.unenvironment.org/styles/article_billboard_image/s3/events/2022-07/jack-chen-8dUhhcEBDcE-unsplash.jpg?h=62e95d8a&itok=2KY0_Jsq');
     background-repeat: no-repeat;
     background-size: cover;
-    /* filter: blur(8px); */
     height: 100vh;
     width: 100%;
-    /* z-index: 1; */
-    
 }
-
-/* .blur{
-  z-index: 9999;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-} */
 
 
 .box {
-    background-color: rgba(255, 255, 255, 0.429);
+    background-color: rgba(255, 255, 255, 0.358);
     border-radius: 35px;
     height: 60vh;
     width: 70vw;
-    
 }
-
-/* 
-.search-click {
-    border: 1px solid #ccc;
-    outline: none;
-    background-size: 22px;
-    background-position: 13px;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    padding: 25px;
-    transition: all 0.5s;
-  }
-  .search-click:focus {
-    width: 300px;
-    padding-left: 50px;
-  }
-  .search-click {
-    position: relative;
-    overflow: hidden;
-    height: 50px;
-  }
-  .search-click input {
-    background: transparent;
-    border: 1px solid #ccc;
-    outline: none;
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    left: 0%;
-    padding: 10px;
-  } */
 
 #temp{
     font-family: 'Lato', sans-serif;
     font-size: 100px;
     color: white;
+    padding-left: 5%;
 }
 
 
 h1{
-    color: rgb(236, 226, 226);
-
+    color: rgb(255, 255, 255);
+    padding-left: 5%;
 }
-#cityForm{
 
+h3{
+  padding-left: 5%;
+  padding-bottom: 5%;
+  color: rgb(255, 255, 255);
+  font-style: italic;
 }
+
 
 input{
     border-radius: 50px;
     border: none;
     background-color: rgba(255, 255, 255, 0.541);
-    color: white;
+    color: black;
     padding: 4px 8px 4px;
-    
+}
+
+input::placeholder {
+  color:rgb(48, 48, 48);
 }
 
 #submitBtn{
   border-radius: 20%;
   border: none;
   color: white;
-  background-color: rgb(89, 111, 132);
+  background-color: rgb(38, 50, 80);
   margin-left: 15px;
+  font-family: 'Rubik Mono One', sans-serif;
 }
 
-
-
 #fiveDay {
-    padding-bottom: 1000px
+    padding-bottom: 1000px;
 }
 
 #dayCard{
@@ -105,21 +69,8 @@ input{
   background-color: rgba(255, 255, 255, 0.317);
   border-radius: 15px;
   border: none;
-
-}
-
-img{
-
-}
-
-#max{
-
 }
 
 #min{
     color: rgba(0, 0, 0, 0.425);
-}
-
-#condition{
-
 }

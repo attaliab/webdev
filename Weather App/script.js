@@ -20,35 +20,44 @@ const displayData = async function(city){
     const forecast = document.getElementById('forecast')
     console.log(weatherData)
 
+    
+
     // current weather data
     let roundedTemp = Math.round(weatherData.current.temp_f)
     temperature.innerText += `${roundedTemp}°`
     location.innerText += `${weatherData.location.name}, ${weatherData.location.region}`
     condition.innerText += `${weatherData.current.condition.text}`
 
+    
     // forecast HTML loop
     for (let i = 0; i < 5; i++){
         const maxTempForecast = Math.round(weatherData.forecast.forecastday[i].day.maxtemp_f)
         const minTempForecast = Math.round(weatherData.forecast.forecastday[i].day.mintemp_f)
         const conditionForecast = weatherData.forecast.forecastday[i].day.condition.text
-        const weatherIcon = icon(iconCondition)
-        // weatherData.forecast.forecastday[i].day.condition.icon
 
-        const icon = iconCondition => (
-          if (iconCondition === 'sunny'){
-
-          } else if (iconCondition.includes('rain') == true) {
-
-          } else if (iconCondition.includes('snow') == true) {
-            
+        const icon = function(weatherCondition){
+          let img = document.createElement("img"); 
+          if (weatherCondition === 'Sunny'){
+            img = './images/sunny.png'
+          } else if (weatherCondition.includes('rain') == true) {
+            img = './images/rainy.png'
+          } else if (weatherCondition.includes('cloudy') == true) {
+            img = './images/partly-cloudy.png'
+          } else if (weatherCondition.includes('snow') == true) {
+            img = './images/snow.png'
+          } else if (weatherCondition.includes('overcast') == true) {
+            img = './images/overcast.png'
           }
-        )
+          return img;
+        }
 
         const forecastDiv = document.getElementById('forecast')
+        const iconElement = icon(conditionForecast);
+        console.log(iconElement)
         forecastDiv.innerHTML += `<div class="row">
         <div class="col-sm-6">
           <div class="card" id='dayCard'>
-          <img src="${weatherIcon}" class="card-img-top p-2" alt="...">
+          <img src="${iconElement}" class="card-img-top p-2" alt="...">
             <div class="card-body">
               <div class='d-flex justify-content-center justify-content-evenly pt-1'>
                 <h5 class="card-title  text-center" id='max'>${maxTempForecast}</h5>

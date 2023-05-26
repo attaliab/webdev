@@ -8,29 +8,41 @@ function addTask(){
         alert("Please enter a task");
     }else{
         let li = document.createElement('li');
-        li.innerHTML = input.value\
+        li.innerHTML = input.value;
         listContainer.appendChild(li);
+        let span = document.createElement('span')
+        // creates the 'x' that will be used to delete the list item
+        span.innerHTML = '\u00d7';
+        li.appendChild(span)
     }
     input.value = '';
+    // when adding a task, this function will be called and will save the entry to the browser
+    saveData();
 }
 
-// const checkbox = document.getElementById('flexCheckDefault')
-// const checkOrNoCheck = checkbox.value
-// checkbox.addEventListener('click', function(){
-//   if(checkOrNoCheck = true){
+listContainer.addEventListener('click', function(e){
+    // if we have clicked on the li tag,
+    if(e.target.tagName === 'LI'){
+    // it will check the box
+        e.target.classList.toggle('checked');
+        saveData();
+        // if the clicked target has a span tag,
+    } else if(e.target.tagName === 'SPAN'){
+        // it will remove the parent element which is the 'li' element
+        e.target.parentElement.remove();
+        saveData();
+    }
+}, false);
 
-//   }
-// })
+// saves listContainer items in browser so that when you close and reopen, the list does not clear
+// call this everytime there is a change to the list: when adding, deleting, or checking off an entry
+function saveData(){
+    localStorage.setItem('data', listContainer.innerHTML)
+}
 
-// const toDoList = []
-// submit.addEventListener('click', function(event){
-//     event.preventDefault()
-//     let listItem = input.value;
-//     toDoList.push(listItem)
-//     console.log(toDoList)
-//     tbody.innerHTML += `<tr>
-//     <th scope="row"></th>
-//     <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">${toDoList[toDoList.length - 1]}</td>
-//   </tr>
-//   `
-// })
+// this function displays the list after closing and reopening the browser
+// without it, when closing the browser, the list will be blank
+function showTask(){
+    listContainer.innerHTML = localStorage.getItem('data');
+}
+showTask();

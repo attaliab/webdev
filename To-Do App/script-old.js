@@ -1,18 +1,6 @@
-const submit = document.getElementById('add')
-const listContainer = document.getElementById('list-container')
-const input = document.getElementById('input-box')
-const tbody = document.getElementById('listDisplay')
-
-function addTask(){
-    if(input.value === ''){
-        alert("Please enter a task");
-    }else{
-        let li = document.createElement('li');
-        li.innerHTML = input.value\
-        listContainer.appendChild(li);
-    }
-    input.value = '';
-}
+// const submit = document.getElementById('submitBtn')
+// const input = document.getElementById('toDoInput')
+// const tbody = document.getElementById('listDisplay')
 
 // const checkbox = document.getElementById('flexCheckDefault')
 // const checkOrNoCheck = checkbox.value

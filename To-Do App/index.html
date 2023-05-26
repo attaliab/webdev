@@ -7,25 +7,27 @@
     <title>To-Do App</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="myLists">
-        <h2>Lists</h2>
-        <form action="">
-            <div class="mb-3 form-check">
-                <div class="mb-3" id="input">
-                    <input type="text" class="form-control" id="toDoInput" placeholder="What do you need to do?">
-                </div>
-                <!--Area where to-do list will be displayed-->
-                <table class="table">
-                    <tbody id='listDisplay'>
-                        
-                    </tbody>
-                </table>
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-        </form>
+<div class="container">
+    <div class="todo-app">
+        <h2>To-Do List</h2>
+        <div class="list-item">
+            <input type="text" id="input-box" placeholder="Add an item to the list">
+            <button onclick="addTask()" id="add">Add</button>
+        </div>
+        <ul id="list-container">
+            <!-- <li class="checked">task 1</li>
+            <li>task 2</li>
+            <li>task 3</li> -->
+        </ul>
+
     </div>
+
+</div>
+
+
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

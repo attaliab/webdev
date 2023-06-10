@@ -46,20 +46,27 @@ newRecipes.addRecipe(
 )
 
 // access the keys in newRecipes.recipeArray so that it can be displayed in the innerHTML div
-console.log(newRecipes.recipeArray);
+
+const recipes = newRecipes.recipeArray;
 
 
-const sunday = document.getElementById('sunday');
-const monday = document.getElementById('monday');
-const tuesday = document.getElementById('tuesday');
-const wednesday = document.getElementById('wednesday');
-const thursday = document.getElementById('thursday');
-const friday = document.getElementById('friday');
-const saturday = document.getElementById('saturday');
+    const sunday = document.getElementById('sunday');
+    const monday = document.getElementById('monday');
+    const tuesday = document.getElementById('tuesday');
+    const wednesday = document.getElementById('wednesday');
+    const thursday = document.getElementById('thursday');
+    const friday = document.getElementById('friday');
+    const saturday = document.getElementById('saturday');
 
     const daysOfTheWeek = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
+  
+const chooseRecipe = function(){
+    const randomNum = Math.floor(Math.random() * recipes.length);
+    const randomRecipe = recipes[randomNum];
+    return randomRecipe;
+}
 
-    console.log(daysOfTheWeek);
+console.log(chooseRecipe());
 
     const displayData = function(days){
         for(i = 0; i < days.length; i++){
@@ -80,3 +87,5 @@ const saturday = document.getElementById('saturday');
         }
     };
 displayData(daysOfTheWeek);
+
+
